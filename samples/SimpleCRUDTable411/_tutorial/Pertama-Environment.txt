@@ -1,0 +1,12 @@
+dalam folder ci-framework-4.1.1:
+1. Ubah nama file "env" menjadi ".env"
+2. Hapus hashtag "# CI_ENVIRONMENT = production"
+3. Ubah isi CI_ENVIRONMENT menjadi "development"
+4. Hapus hashtag "# app.baseURL = ''"
+5. Isi app.baseURL dengan:
+"http://localhost/SIM-PaudMentari/samples/SimpleCRUDTable411/public"
+
+=== DATABASE
+6. Hapus semua hashtag "# database.default.."
+7. Hapus isi "database.default.password" jika mysqlnya tidak dirubah passwordnya
+8. Isi "database.default.database" dengan nama database "SimpleCRUDT411"

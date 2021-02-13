@@ -1,0 +1,6 @@
+Sesuai selera
+
+=== Cara set default Controller
+1. buka ../app/Config/Routes.php
+2. Ganti "setDefaultController" dengan nama controller yang ingin digunakan sebagai default
+3. Ganji juga isi "Home::index" yang ada di "$routes->get" menjadi nama controller yang ingin digunakan sebagai default

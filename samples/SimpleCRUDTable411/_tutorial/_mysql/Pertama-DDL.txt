@@ -1,0 +1,15 @@
+# 1) Pastikan tidak ada Database yang bernama "ScrudT411"
+# 2) Buka shell di xampp lalu ketikan:
+#    mysql -u root
+
+DROP DATABASE IF EXISTS ScrudT411;
+CREATE DATABASE ScrudT411;
+
+USE ScrudT411;
+
+CREATE TABLE Mahasiswa (
+nim VARCHAR(8) NOT NULL,
+nama_lengkap VARCHAR(64) NOT NULL,
+kelas VARCHAR(6) NOT NULL,
+PRIMARY KEY (nim)
+);

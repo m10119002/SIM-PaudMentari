@@ -1,0 +1,9 @@
+# Buka shell di xampp lalu ketikan:
+# mysql -u root
+
+USE ScrudT411;
+
+INSERT INTO Mahasiswa values
+(10119040, "Agus Deri Dermawan", "IF-1"),
+(10119002, "Firman Sahita", "IF-1"),
+(10119032, "Ginanjar Tubagus Gumilar", "IF-1");
