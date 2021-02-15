@@ -1,0 +1,42 @@
+# 1) Pastikan tidak ada Database yang bernama "SIMPaudMentari"
+# 2) Buka shell di xampp lalu ketikan:
+#    mysql -u root
+
+DROP DATABASE IF EXISTS SIMPaudMentari;
+CREATE DATABASE SIMPaudMentari;
+
+USE SIMPaudMentari;
+
+CREATE TABLE akun (
+username VARCHAR(32) NOT NULL,
+password VARCHAR(255) NOT NULL,
+is_admin BOOLEAN NOT NULL DEFAULT 0,
+CONSTRAINT pk_akun PRIMARY KEY (username)
+);
+
+CREATE TABLE nomor_hp (
+username VARCHAR(32) NOT NULL,
+no_hp VARCHAR(15) NOT NULL DEFAULT "0",
+CONSTRAINT pk_nomorhp PRIMARY KEY (username),
+CONSTRAINT fk_nomorhp_akun
+FOREIGN KEY (username) REFERENCES akun(username)
+ON DELETE CASCADE
+ON UPDATE CASCADE
+);
+
+CREATE TABLE kode_otp (
+username VARCHAR(32) NOT NULL,
+kode_otp VARCHAR(255),
+is_active BOOLEAN NOT NULL DEFAULT 0,
+CONSTRAINT pk_kodeotp PRIMARY KEY (username),
+CONSTRAINT fk_kodeotp_akun
+FOREIGN KEY (username) REFERENCES akun(username)
+ON DELETE CASCADE
+ON UPDATE CASCADE
+);
+
+CREATE TABLE site_code (
+codename VARCHAR(64) NOT NULL,
+status BOOLEAN NOT NULL DEFAULT 0,
+CONSTRAINT pk_sitecode PRIMARY KEY (codename)
+);

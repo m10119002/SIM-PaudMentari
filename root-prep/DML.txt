@@ -1,0 +1,8 @@
+# Buka shell di xampp lalu ketikan:
+# mysql -u root
+
+USE SIMPaudMentari;
+
+INSERT INTO site_code values 
+('site.maintenance', 1),
+('site.unavailable', 0);
