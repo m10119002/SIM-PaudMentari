@@ -6,6 +6,10 @@ use CodeIgniter\Config\BaseConfig;
 use CodeIgniter\Filters\CSRF;
 use CodeIgniter\Filters\DebugToolbar;
 use CodeIgniter\Filters\Honeypot;
+use App\Filters\NoAdminFilter;
+use App\Filters\VisitorFilter;
+use App\Filters\MemberFilter;
+use App\Filters\AdminFilter;
 
 class Filters extends BaseConfig
 {
@@ -19,6 +23,19 @@ class Filters extends BaseConfig
 		'csrf'     => CSRF::class,
 		'toolbar'  => DebugToolbar::class,
 		'honeypot' => Honeypot::class,
+		'noadmin' => NoAdminFilter::class,
+		'visitor' => [
+			NoAdminFilter::class,
+			VisitorFilter::class
+		],
+		'member' => [
+			NoAdminFilter::class,
+			MemberFilter::class
+		],
+		'admin' => [
+			NoAdminFilter::class,
+			AdminFilter::class
+		]
 	];
 
 	/**
@@ -58,5 +75,5 @@ class Filters extends BaseConfig
 	 *
 	 * @var array
 	 */
-	public $filters = [];
+	public $filters = [''];
 }

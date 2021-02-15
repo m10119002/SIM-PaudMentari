@@ -40,4 +40,25 @@ class Validation
 	//--------------------------------------------------------------------
 	// Rules
 	//--------------------------------------------------------------------
+	public $akun    = [
+		'user' => 'required|alpha_dash|max_length[32]',
+		'pass' => 'required|max_length[50]',
+		'pass_ulang' => 'required|matches[pass]'
+	];
+	
+    public $akun_errors = [
+		'user' => [
+			'required' => 'Username tidak boleh kosong!',
+			'alpha_dash' => 'Username tidak boleh mengandung spasi atau simbol selain dash(-), underscore(_)!',
+			'max_length' => 'Username tidak boleh melebihi 32 karakter!',
+		],
+		'pass' => [
+			'required' => 'Password tidak boleh kosong!',
+			'max_length' => 'Password tidak boleh melebihi 50 karakter!'
+		],
+		'pass_ulang' => [
+			'required' => 'Password Ulang tidak boleh kosong!',
+			'matches' => 'Password Ulang harus sama dengan Password!'
+		]
+	];
 }

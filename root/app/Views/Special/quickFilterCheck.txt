@@ -1,0 +1,9 @@
+$noreturn = false;
+			if ($arguments !== null) {
+				foreach ($arguments as $arg) {
+					$noreturn = ($arg == 'noreturn'? true : false);
+				}
+			}
+			if (!$noreturn) {
+				return redirect()->route('/');
+			}

@@ -45,5 +45,11 @@ class BaseController extends Controller
 		// Preload any models, libraries, etc, here.
 		//--------------------------------------------------------------------
 		// E.g.: $this->session = \Config\Services::session();
+		$this->session = \Config\Services::session();
+		$akunModel = model('App\Models\Akun\AkunModel');
+		
+		if (empty($akunModel->where('is_admin', 1)->first())) {
+			$this->session->set('no-admin', true);
+		}
 	}
 }
