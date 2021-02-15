@@ -80,7 +80,7 @@
 
         <!-- Profil Sekolah -->
         <div class="container" style="background-color: white; border: 5px solid #823b08fd;">
-            <h3 style="font-family: Brush Script MT, Cambria, Cochin, Georgia; font-size: 40px;">Profil Sekolah</h3>
+            <h3 style="font-family: Brush Script MT, Cambria, Cochin, Georgia; font-size: 40px;">Visi Misi Paud Mentari</h3>
 
             <table class="table" style="font-size: 13px;">
                 <tr>
