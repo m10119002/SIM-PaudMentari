@@ -1,12 +1,12 @@
-<?php namespace App\Models\Mahasiswa;
+<?php namespace App\Models\Akun;
 
 use CodeIgniter\Model;
 
-class MahasiswaModel extends Model
+class AkunModel extends Model
 {
 	protected $DBGroup	  = '';
-    protected $table      = 'site_code';
-    protected $primaryKey = 'codename';
+    protected $table      = 'akun';
+    protected $primaryKey = 'username';
 
     // protected $useAutoIncrement = true;
 

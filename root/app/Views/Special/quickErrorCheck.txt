@@ -1,0 +1,4 @@
+<?php if (isset($validation)): ?>
+	<?php foreach($validation as $error) ?>
+	<p><?php echo $error; ?></p>
+<?php endif; ?>

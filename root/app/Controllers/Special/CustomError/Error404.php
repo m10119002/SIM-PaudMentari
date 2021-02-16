@@ -7,6 +7,6 @@ class Error404 extends BaseController
 {
 	public function index()
 	{
-		
+		return view('errors\html\error_404');
 	}
 }

@@ -30,7 +30,7 @@ class MahasiswaModel extends Model
 	protected $validationRules    = [
         'nim'			=> 'required|numeric|exact_length[8]|is_unique[mahasiswa.nim]',
         'nama_lengkap'	=> 'required|alpha_space|max_length[64]',
-        'kelas'			=> 'required|alpha_dash|min_length[3]|max_length[6]',
+        'kelas'			=> 'required|alpha_dash|min_length[3]|max_length[6]'
     ];
 
     protected $validationMessages = [
