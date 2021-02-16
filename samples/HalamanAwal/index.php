@@ -40,11 +40,6 @@
 
                     <div class="collapse navbar-collapse" id="navbarSupportedContent">
                         <ul class="navbar-nav nav">
-                            <li><a href="index.php"><button style="background-color: #823b08fd; color:white; width: 100%; border: none; font-size: 130%;"> Beranda</button></a></li>
-                            <li><a href="infoptk.php"><button style="background-color: #823b08fd; color:white; width: 100%; border: none; font-size: 130%;"> Info PTK</button></a></li>
-                            <li><a href="sarpras.php"><button style="background-color: #823b08fd; color:white; width: 100%; border: none; font-size: 130%;"> Sarana dan Prasarana</button></a></li>
-                            <li><a href="infomurid.php"><button style="background-color: #823b08fd; color:white; width: 100%; border: none; font-size: 130%;"> Info Murid</button></a></li>
-                            <li><a href="pengumuman.php"><button style="background-color: #823b08fd; color:white; width: 100%; border: none; font-size: 130%;"> Pengumuman</button></a></li>
                             <li><a href="login.php"><button style="background-color: #823b08fd; color:white; width: 100%; border: none; font-size: 130%;"> Pendaftaran</button></a></li>
                         </ul>
                     </div>
