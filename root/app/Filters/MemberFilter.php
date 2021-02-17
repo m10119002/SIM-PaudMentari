@@ -10,7 +10,7 @@ class MemberFilter implements FilterInterface
 {
     public function before(RequestInterface $request, $arguments = null)
     {
-        if (session()->get('tipeUser') == 'admin' {
+        if (session()->get('tipeUser') == 'admin') {
 			return redirect()->route('admin/home');
 		} elseif (session()->get('tipeUser') == 'member') {
 			// do nothing

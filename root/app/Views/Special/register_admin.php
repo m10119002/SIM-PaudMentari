@@ -13,7 +13,7 @@
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
 
     <!-- Favicon Tab -->
-    <link rel="icon" href="<?php echo base_url('paud.png'); ?>">
+    <?php echo $this->include('global_layout/favicon'); ?>
     <title>PAUD Mentari Cidadap</title>
 </head>
 
@@ -39,14 +39,14 @@
                             <td>Username :
                         <tr>
                             <div class="datainput">
-                                <td colspan="2"><input class="validate" id="wa_username" name="user" style="width: 100%" type="text" value='' />
+                                <td colspan="2"><input class="validate" id="wa_username" name="user" style="width: 100%" type="text" value='<?php echo (isset($loadForm['user'])? $loadForm['user'] : ""); ?>' />
                                     <span class="highlight"><?php echo (isset($validation['user'])? $validation['user'] : ""); ?></span><span class="bar"></span>
                             </div>
                         <tr>
                             <td>Password :
                         <tr>
                             <div class="datainput">
-                                <td colspan="2"><input class="validate" id="wa_password" style="width: 100%" name="pass" type="password" value='' />
+                                <td colspan="2"><input class="validate" id="wa_password" style="width: 100%" name="pass" type="password" value='<?php echo (isset($loadForm['pass'])? $loadForm['pass'] : ""); ?>' />
 
                                     <span class="highlight"><?php echo (isset($validation['pass'])? $validation['pass'] : ""); ?></span><span class="bar"></span>
                             </div>
@@ -54,7 +54,7 @@
                             <td>Password Ulang :
                         <tr>
                             <div class="datainput">
-                                <td colspan="2"><input class="validate" id="wa_password" style="width: 100%" name="pass_ulang" type="password" value='' />
+                                <td colspan="2"><input class="validate" id="wa_password" style="width: 100%" name="pass_ulang" type="password" value='<?php echo (isset($loadForm['pass_ulang'])? $loadForm['pass_ulang'] : ""); ?>' />
 
                                     <span class="highlight"><?php echo (isset($validation['pass_ulang'])? $validation['pass_ulang'] : ""); ?></span><span class="bar"></span>
                             </div>

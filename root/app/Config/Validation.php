@@ -61,4 +61,18 @@ class Validation
 			'matches' => 'Password Ulang harus sama dengan Password!'
 		]
 	];
+	
+	public $login    = [
+		'username' => 'required',
+		'password' => 'required'
+	];
+	
+	public $login_errors = [
+		'username' => [
+			'required' => 'Username tidak boleh kosong!'
+		],
+		'password' => [
+			'required' => 'Password tidak boleh kosong!'
+		]
+	];
 }

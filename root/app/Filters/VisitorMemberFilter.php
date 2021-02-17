@@ -6,16 +6,16 @@ use CodeIgniter\HTTP\RequestInterface;
 use CodeIgniter\HTTP\ResponseInterface;
 use CodeIgniter\Filters\FilterInterface;
 
-class AdminFilter implements FilterInterface
+class VisitorMemberFilter implements FilterInterface
 {
     public function before(RequestInterface $request, $arguments = null)
     {
         if (session()->get('tipeUser') == 'admin') {
-			// do nothing
+			return redirect()->route('admin/home');
 		} elseif (session()->get('tipeUser') == 'member') {
-			return redirect()->route('member/home');
+			// do nothing
 		} else {
-			return redirect()->route('/');
+			// do nothing
 		}
     }
 

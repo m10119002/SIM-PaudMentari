@@ -44,8 +44,8 @@ class Launcher extends BaseController
 			
 			$akunGodModel = model('App\Models\Akun\AkunGodModel');
 			$data = [
-				'username' => $this->request->getPost('user'),
-				'password' => password_hash($this->request->getPost('pass'), PASSWORD_DEFAULT),
+				'username' => $formData['user'],
+				'password' => password_hash($formData['pass'], PASSWORD_DEFAULT),
 				'is_admin' => 1
 			];
 			

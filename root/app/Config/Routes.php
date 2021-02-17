@@ -26,12 +26,22 @@ $routes->setAutoRoute(false);
 
 $routes->match(['get', 'post'], 'xyz/new', 'Launcher::adminBaru', ['filter' => 'noadmin:noreturn']);
 $routes->match(['get', 'post'], 'login', 'Visitor\Visitor::login', ['filter' => 'visitor']);
-$routes->get('home', 'Visitor\Visitor::home', ['filter' => 'visitor']);
-$routes->get('infoptk', 'Visitor\InfoPTK\VisitorInfoPTK::index', ['filter' => 'visitor']);
-$routes->get('sarpras', 'Visitor\Sarpras\VisitorSarpras::index', ['filter' => 'visitor']);
-$routes->get('infomurid', 'Visitor\InfoMurid\VisitorInfoMurid::index', ['filter' => 'visitor']);
-$routes->get('pengumuman', 'Visitor\Pengumuman\VisitorPengumuman::index', ['filter' => 'visitor']);
+$routes->match(['get', 'post'], 'register', 'Visitor\Visitor::register', ['filter' => 'visitor']);
+$routes->get('home', 'Visitor\Visitor::home', ['filter' => 'v_mem']);
+$routes->get('infoptk', 'Visitor\InfoPTK\VisitorInfoPTK::index', ['filter' => 'v_mem']);
+$routes->get('sarpras', 'Visitor\Sarpras\VisitorSarpras::index', ['filter' => 'v_mem']);
+$routes->get('infomurid', 'Visitor\InfoMurid\VisitorInfoMurid::index', ['filter' => 'v_mem']);
+$routes->get('pengumuman', 'Visitor\Pengumuman\VisitorPengumuman::index', ['filter' => 'v_mem']);
 $routes->get('error_404', 'Special\CustomError\Error404::index');
+$routes->group('member', function($routes) {
+	$routes->get('home', 'Member\Member::home', ['filter' => 'member']);
+	$routes->get('pendaftaran', 'Member\Member::pendaftaran', ['filter' => 'member']);
+	$routes->get('logout', 'Member\Member::logout', ['filter' => 'member']);
+});
+$routes->group('admin', function($routes) {
+	$routes->get('home', 'Admin\Admin::home', ['filter' => 'admin']);
+	$routes->get('logout', 'Admin\Admin::logout', ['filter' => 'admin']);
+});
 /*
  * --------------------------------------------------------------------
  * Route Definitions

@@ -10,6 +10,7 @@ use App\Filters\NoAdminFilter;
 use App\Filters\VisitorFilter;
 use App\Filters\MemberFilter;
 use App\Filters\AdminFilter;
+use App\Filters\VisitorMemberFilter;
 
 class Filters extends BaseConfig
 {
@@ -35,6 +36,10 @@ class Filters extends BaseConfig
 		'admin' => [
 			NoAdminFilter::class,
 			AdminFilter::class
+		],
+		'v_mem' => [
+			NoAdminFilter::class,
+			VisitorMemberFilter::class
 		]
 	];
 
