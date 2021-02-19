@@ -27,6 +27,32 @@
             <?php echo $this->include('Visitor/layout/navbar'); ?>
             <br>
         </center>
+		
+		<!-- Profil Sekolah -->
+        <div class="container" style="background-color: white; border: 5px solid #823b08fd;">
+            <h3 style="font-family: Brush Script MT, Cambria, Cochin, Georgia; font-size: 40px;">Visi Misi Paud Mentari</h3>
+            <b>VISI</b><br>
+            <ol>
+                Unggul dalam prestasi, santun dalam perilaku, beriman dan taqwa.<br></ol>
+            <b>MISI</b><br>
+            <ol>
+                <li> Membekali anak didik dengan berbagai kemampuan sesuai karakteristik anak usia dini.</li>
+                <li>Menanamkan nilai-nilai ke agamaan dan ketaqwaan terhadap Tuhan Yang Maha Esa.</li>
+                <li>Memberdayakan potensi kecerdasan intelektual, kecerdasan emosi, kecerdasan sosial dan kecerdasan religius anak didik.</li>
+                <li>Membekali anak dalam hal budi pekerti luhur dan terpuji sesuai nilai-nilai luhur bangsa indonesia.</li>
+            </ol>
+            <b>TUJUAN</b>
+            <ol>
+                <li> Meningkatkan layanan pendidikan terhadap anak usia dini sesuai tahap perkembanganya.</li>
+                <li> Membina lingkungan lembaga PAUD yang mendukung terciptanya satuan paud sebagai tempat pembelajaran kondusif.</li>
+                <li> Membina kultur lembaga paud yang mendukung terciptanya warga lembaga paud yang mempunyai dedikasi dan etos kerja yang tinggi.</li>
+                <li> Meningkatkan kualitas sarana prasarana untuk menunjang proses pembelajaran.</li>
+                <li> Membina kerjasama yang harmonis dengan stakeholder terkait guna meningkatkan optimalisasi layanan paud.</li>
+            </ol>
+
+
+            <br>
+        </div>
 
         <!-- Carousel / Slider Gambar -->
         <center>
@@ -52,73 +78,6 @@
                 </a>
             </div><br>
         </center>
-
-        <!-- Profil Sekolah -->
-        <div class="container" style="background-color: white; border: 5px solid #823b08fd;">
-            <h3 style="font-family: Brush Script MT, Cambria, Cochin, Georgia; font-size: 40px;">Profil Sekolah</h3>
-
-            <table class="table" style="font-size: 13px;">
-                <tr>
-                    <td>Nama Lembaga
-                    <td style="text-align: center; width: 10%;"> :
-                    <td>PAUD Mentari
-
-                <tr>
-                    <td>Kepemilikan Tanah
-                    <td style="text-align: center; width: 10%;"> :
-                    <td>Perseorangan
-                <tr>
-                    <td>Luas Tanah
-                    <td style="text-align: center; width: 10%;"> :
-                    <td>100 m2
-                <tr>
-                    <td>Luas Bangunan
-                    <td style="text-align: center; width: 10%;"> :
-                    <td>40 m2
-                <tr>
-                    <td>Luas Tanah yang Akan Dibangun
-                    <td style="text-align: center; width: 10%;"> :
-                    <td>600 m2
-
-                <tr>
-                    <td>Lokasi
-                    <td style="text-align: center; width: 10%;"> :
-                    <td>Kp. Ciwalen RT.04 RW.04, Ciwalen, Cidadap, Kec. Cempaka, Kab. Cianjur, Prov. Jawa Barat
-                <tr>
-                    <td>Telepon/HP
-                    <td style="text-align: center; width: 10%;"> :
-                    <td>0813-2270-7774
-                <tr>
-                    <td>Email
-                    <td style="text-align: center; width: 10%;"> :
-                    <td>paud.mentari.cpk@gmail.com
-                <tr>
-                    <td>Website
-                    <td style="text-align: center; width: 10%;"> :
-                    <td>www.mentaricidadap.sch.id
-                <tr>
-                    <td>Hari Pembelajaran
-                    <td style="text-align: center; width: 10%;"> :
-                    <td>5x pertemuan (Senin-Jumat)
-                <tr>
-                    <td>Jam Pembelajaran
-                    <td style="text-align: center; width: 10%;"> :
-                    <td>08.00 WIB s/d 11.00 WIB
-                <tr>
-                    <td>Kegiatan Inti
-                    <td style="text-align: center; width: 10%;"> :
-                    <td>1 hari 3 jam pembelajaran x 5 hari = 15 jam
-
-
-            </table>
-
-            <!-- Google Map -->
-            <div class="container-fluid">
-                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3959.820134189582!2d107.13978161477354!3d-7.030416494921851!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e685c822f9ea62d%3A0x4135abd4257bb62d!2sPAUD%20MENTARI!5e0!3m2!1sen!2sid!4v1613057197808!5m2!1sen!2sid" width="100%" height="300px" frameborder="0" style="border:0;" allowfullscreen="" aria-hidden="false" tabindex="0"></iframe>
-            </div>
-            <br>
-        </div>
-        <br>
 
         <footer style="position: absolute; bottom: 1; width: 100%; background-color: black;">
             <br>

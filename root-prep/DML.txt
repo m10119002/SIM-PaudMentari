@@ -3,6 +3,26 @@
 
 USE SIMPaudMentari;
 
-INSERT INTO site_code values 
-('site.maintenance', 1),
-('site.unavailable', 0);
+INSERT INTO profil_sekolah values
+(0, 'PAUD Mentari', 'Perseorangan', '100 m2', '40 m2', '600 m2', 'Kp. Ciwalen RT.04 RW.04, Ciwalen, Cidadap, Kec. Cempaka, Kab. Cianjur, Prov. Jawa Barat', '0813-2270-7774', 'paud.mentari.cpk@gmail.com', 'www.mentaricidadap.sch.id', '5x pertemuan (Senin-Jumat)', '08.00 WIB s/d 11.00 WIB', '1 hari 3 jam pembelajaran x 5 hari = 15 jam');
+
+INSERT INTO info_ptk values
+(0, 'Kepala Sekolah', 'Novia Susanti'),
+(1, 'Tenaga Administrasi Sekolah', 'Ujang Misbahudin'),
+(2, 'Guru Kelas', 'Aan Hasanah'),
+(3, 'Guru Kelas', 'Titin Supriatin');
+
+INSERT INTO sarana values
+(0, 'Meja Siswa', 1),
+(1, 'Papan Tulis', 1),
+(2, 'Lemari', 1);
+
+INSERT INTO prasarana values
+(0, 'Ruang Teori/Kelas', 2),
+(1, 'Kamar Mandi/WC Siswa Laki-Laki', 1),
+(2, 'Kamar Mandi/WC Siswa Perempuan', 1);
+
+INSERT INTO pengumuman values
+(0, 'Bagi Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nisi sed distinctio ea deleniti, sint doloribus sunt provident eligendi delectus fugit excepturi a tenetur atque minus laudantium tempore vitae asperiores cupiditate? Terimakasih'),
+(1, 'Tanggal 19 PAUD mentari akan menyelenggarakan Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam itaque incidunt excepturi possimus culpa id, hic at illum repudiandae pariatur corporis harum delectus temporibus placeat sint accusantium adipisci impedit tempore.'),
+(2, 'Sehubungan dengan pandemi Virus COVID-19, maka Lorem ipsum dolor sit amet consectetur adipisicing elit. Iusto corrupti voluptatum magnam ex, dignissimos ea modi eum labore assumenda. Officiis ad tempore earum quia mollitia perspiciatis reiciendis vel odio architecto?');

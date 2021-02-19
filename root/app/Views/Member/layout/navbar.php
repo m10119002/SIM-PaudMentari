@@ -9,11 +9,11 @@
 
 		<div class="collapse navbar-collapse" id="navbarSupportedContent">
 			<ul class="navbar-nav nav">
-				<li><a href="<?php echo base_url('home'); ?>"><button style="background-color: #823b08fd; color:white; width: 100%; border: none; font-size: 130%;"> Beranda</button></a></li>
-				<li><a href="<?php echo base_url('infoptk'); ?>"><button style="background-color: #823b08fd; color:white; width: 100%; border: none; font-size: 130%;"> Info PTK</button></a></li>
-				<li><a href="<?php echo base_url('sarpras'); ?>"><button style="background-color: #823b08fd; color:white; width: 100%; border: none; font-size: 130%;"> Sarana dan Prasarana</button></a></li>
-				<li><a href="<?php echo base_url('infomurid'); ?>"><button style="background-color: #823b08fd; color:white; width: 100%; border: none; font-size: 130%;"> Info Murid</button></a></li>
-				<li><a href="<?php echo base_url('pengumuman'); ?>"><button style="background-color: #823b08fd; color:white; width: 100%; border: none; font-size: 130%;"> Pengumuman</button></a></li>
+				<li><a href="<?php echo base_url('member/home'); ?>"><button style="background-color: #823b08fd; color:white; width: 100%; border: none; font-size: 130%;"> Beranda</button></a></li>
+				<li><a href="<?php echo base_url('member/infoptk'); ?>"><button style="background-color: #823b08fd; color:white; width: 100%; border: none; font-size: 130%;"> Info PTK</button></a></li>
+				<li><a href="<?php echo base_url('member/sarpras'); ?>"><button style="background-color: #823b08fd; color:white; width: 100%; border: none; font-size: 130%;"> Sarana dan Prasarana</button></a></li>
+				<li><a href="<?php echo base_url('member/infomurid'); ?>"><button style="background-color: #823b08fd; color:white; width: 100%; border: none; font-size: 130%;"> Info Murid</button></a></li>
+				<li><a href="<?php echo base_url('member/pengumuman'); ?>"><button style="background-color: #823b08fd; color:white; width: 100%; border: none; font-size: 130%;"> Pengumuman</button></a></li>
 				<li><a href="<?php echo base_url('member/pendaftaran'); ?>"><button style="background-color: #823b08fd; color:white; width: 100%; border: none; font-size: 130%;"> Pendaftaran</button></a></li>
 			</ul>
 		</div>

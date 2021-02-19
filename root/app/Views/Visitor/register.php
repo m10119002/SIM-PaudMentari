@@ -33,6 +33,8 @@
                 <h4>BUAT AKUN</h4>
                 <p style="font-size: 80%;">Isi username dan password yang diinginkan.
                 </p>
+				<p style="font-size: 80%;"><a href="<?php echo base_url('home'); ?>">Kembali</a>
+                </p>
                 <div style="overflow-x: auto;">
                     <table border="0" style="width: 50%;">
                         <tr>

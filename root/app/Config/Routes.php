@@ -27,21 +27,67 @@ $routes->setAutoRoute(false);
 $routes->match(['get', 'post'], 'xyz/new', 'Launcher::adminBaru', ['filter' => 'noadmin:noreturn']);
 $routes->match(['get', 'post'], 'login', 'Visitor\Visitor::login', ['filter' => 'visitor']);
 $routes->match(['get', 'post'], 'register', 'Visitor\Visitor::register', ['filter' => 'visitor']);
-$routes->get('home', 'Visitor\Visitor::home', ['filter' => 'v_mem']);
-$routes->get('infoptk', 'Visitor\InfoPTK\VisitorInfoPTK::index', ['filter' => 'v_mem']);
-$routes->get('sarpras', 'Visitor\Sarpras\VisitorSarpras::index', ['filter' => 'v_mem']);
-$routes->get('infomurid', 'Visitor\InfoMurid\VisitorInfoMurid::index', ['filter' => 'v_mem']);
-$routes->get('pengumuman', 'Visitor\Pengumuman\VisitorPengumuman::index', ['filter' => 'v_mem']);
+$routes->get('home', 'Visitor\Visitor::home', ['filter' => 'visitor']);
 $routes->get('error_404', 'Special\CustomError\Error404::index');
 $routes->group('member', function($routes) {
-	$routes->get('home', 'Member\Member::home', ['filter' => 'member']);
-	$routes->get('pendaftaran', 'Member\Member::pendaftaran', ['filter' => 'member']);
+	$routes->get('/', 'Member\Member::home', ['filter' => 'member']);
+	
+	$routes->get('home', 'Member\Home\MemberHome::index', ['filter' => 'member']);
+	$routes->get('pendaftaran', 'Member\Pendaftaran\MemberPendaftaran::pendaftaran', ['filter' => 'member']);
+	
+	$routes->get('infoptk', 'Member\InfoPTK\MemberInfoPTK::index', ['filter' => 'member']);
+	$routes->get('sarpras', 'Member\Sarpras\MemberSarpras::index', ['filter' => 'member']);
+	$routes->get('infomurid', 'Member\InfoMurid\MemberInfoMurid::index', ['filter' => 'member']);
+	$routes->get('pengumuman', 'Member\Pengumuman\MemberPengumuman::index', ['filter' => 'member']);
+	
 	$routes->get('logout', 'Member\Member::logout', ['filter' => 'member']);
 });
 $routes->group('admin', function($routes) {
-	$routes->get('home', 'Admin\Admin::home', ['filter' => 'admin']);
+	$routes->get('/', 'Admin\Home\AdminHome::index', ['filter' => 'admin']);
+	
+	$routes->group('home', function($routes) {
+		$routes->get('/', 'Admin\Home\AdminHome::index', ['filter' => 'admin']);
+		$routes->match(['get', 'post'], 'edit', 'Admin\Home\AdminHome::edit', ['filter' => 'admin']);
+	});
+	
+	$routes->group('infoptk', function($routes) {
+		$routes->get('/', 'Admin\InfoPTK\AdminInfoPTK::index', ['filter' => 'admin']);
+		$routes->match(['get', 'post'], 'tambah', 'Admin\InfoPTK\AdminInfoPTK::tambah', ['filter' => 'admin']);
+		$routes->match(['get', 'post'], 'edit', 'Admin\InfoPTK\AdminInfoPTK::edit', ['filter' => 'admin']);
+		$routes->get('hapus', 'Admin\InfoPTK\AdminInfoPTK::hapus', ['filter' => 'admin']);
+	});
+	
+	$routes->group('sarpras', function($routes) {
+		$routes->get('/', 'Admin\Sarpras\AdminSarpras::index', ['filter' => 'admin']);
+		$routes->group('sarana', function($routes) {
+			$routes->match(['get', 'post'], 'tambah', 'Admin\Sarpras\AdminSarana::tambah', ['filter' => 'admin']);
+			$routes->match(['get', 'post'], 'edit', 'Admin\Sarpras\AdminSarana::edit', ['filter' => 'admin']);
+			$routes->get('hapus', 'Admin\Sarpras\AdminSarana::hapus', ['filter' => 'admin']);
+		});
+		$routes->group('prasarana', function($routes) {
+			$routes->match(['get', 'post'], 'tambah', 'Admin\Sarpras\AdminPrasarana::tambah', ['filter' => 'admin']);
+			$routes->match(['get', 'post'], 'edit', 'Admin\Sarpras\AdminPrasarana::edit', ['filter' => 'admin']);
+			$routes->get('hapus', 'Admin\Sarpras\AdminPrasarana::hapus', ['filter' => 'admin']);
+		});
+	});
+	
+	$routes->group('infomurid', function($routes) {
+		$routes->get('/', 'Admin\InfoMurid\AdminInfoMurid::index', ['filter' => 'admin']);
+		$routes->get('/(:num)', 'Admin\InfoMurid\AdminInfoMurid::index', ['filter' => 'admin']);
+		$routes->match(['get', 'post'], '(:num)/tambah', 'Admin\InfoMurid\AdminInfoMurid::tambah', ['filter' => 'admin']);
+		$routes->match(['get', 'post'], '(:num)/edit', 'Admin\InfoMurid\AdminInfoMurid::edit', ['filter' => 'admin']);
+	});
+	
+	$routes->group('pengumuman', function($routes) {
+		$routes->get('/', 'Admin\Pengumuman\AdminPengumuman::index', ['filter' => 'admin']);
+		$routes->match(['get', 'post'], 'tambah', 'Admin\Pengumuman\AdminPengumuman::tambah', ['filter' => 'admin']);
+		$routes->match(['get', 'post'], 'edit', 'Admin\Pengumuman\AdminPengumuman::edit', ['filter' => 'admin']);
+		$routes->get('hapus', 'Admin\Pengumuman\AdminPengumuman::hapus', ['filter' => 'admin']);
+	});
+	
 	$routes->get('logout', 'Admin\Admin::logout', ['filter' => 'admin']);
 });
+//$routes->match(['get', 'post'], '(.*)', 'Special\CustomError\Error404::index');
 /*
  * --------------------------------------------------------------------
  * Route Definitions

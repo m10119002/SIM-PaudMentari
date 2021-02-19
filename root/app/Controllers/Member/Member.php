@@ -9,14 +9,6 @@ class Member extends BaseController
 		helper(['form', 'url']);
 	}
 	
-	public function home() {
-		return redirect()->route('home');
-	}
-	
-	public function pendaftaran() {
-		return view('Member\formulir');
-	}
-	
 	public function logout() {
 		session()->remove('username');
 		session()->remove('tipeUser');
