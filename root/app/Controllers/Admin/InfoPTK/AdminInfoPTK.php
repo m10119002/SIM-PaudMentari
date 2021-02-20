@@ -31,9 +31,9 @@ class AdminInfoPTK extends Admin
 			if ($infoptkTambahModel->insert($formData) === false) {
 				$viewData = [
 					'loadForm' => $formData,
-					'validation' => $infoptkModel->errors()
+					'validation' => $infoptkTambahModel->errors()
 				];
-				return view('Admin\InfoPTK\edit_infoptk', $viewData);
+				return view('Admin\InfoPTK\tambah_infoptk', $viewData);
 			} else {
 				return redirect()->route('admin/infoptk');
 			}
@@ -67,7 +67,7 @@ class AdminInfoPTK extends Admin
 					if ($infoptkEditModel->update($id, $data) === false) {
 						$viewData = [
 							'loadForm' => $formData,
-							'validation' => $infoptkModel->errors()
+							'validation' => $infoptkEditModel->errors()
 						];
 						return view('Admin\InfoPTK\edit_infoptk', $viewData);
 					} else {

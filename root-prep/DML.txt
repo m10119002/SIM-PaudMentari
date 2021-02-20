@@ -7,22 +7,34 @@ INSERT INTO profil_sekolah values
 (0, 'PAUD Mentari', 'Perseorangan', '100 m2', '40 m2', '600 m2', 'Kp. Ciwalen RT.04 RW.04, Ciwalen, Cidadap, Kec. Cempaka, Kab. Cianjur, Prov. Jawa Barat', '0813-2270-7774', 'paud.mentari.cpk@gmail.com', 'www.mentaricidadap.sch.id', '5x pertemuan (Senin-Jumat)', '08.00 WIB s/d 11.00 WIB', '1 hari 3 jam pembelajaran x 5 hari = 15 jam');
 
 INSERT INTO info_ptk values
-(0, 'Kepala Sekolah', 'Novia Susanti'),
-(1, 'Tenaga Administrasi Sekolah', 'Ujang Misbahudin'),
-(2, 'Guru Kelas', 'Aan Hasanah'),
-(3, 'Guru Kelas', 'Titin Supriatin');
+(1, 'Kepala Sekolah', 'Novia Susanti'),
+(2, 'Tenaga Administrasi Sekolah', 'Ujang Misbahudin'),
+(3, 'Guru Kelas', 'Aan Hasanah'),
+(4, 'Guru Kelas', 'Titin Supriatin');
 
 INSERT INTO sarana values
-(0, 'Meja Siswa', 1),
-(1, 'Papan Tulis', 1),
-(2, 'Lemari', 1);
+(1, 'Meja Siswa', 1),
+(2, 'Papan Tulis', 1),
+(3, 'Lemari', 1);
 
 INSERT INTO prasarana values
-(0, 'Ruang Teori/Kelas', 2),
-(1, 'Kamar Mandi/WC Siswa Laki-Laki', 1),
-(2, 'Kamar Mandi/WC Siswa Perempuan', 1);
+(1, 'Ruang Teori/Kelas', 2),
+(2, 'Kamar Mandi/WC Siswa Laki-Laki', 1),
+(3, 'Kamar Mandi/WC Siswa Perempuan', 1);
 
 INSERT INTO pengumuman values
-(0, 'Bagi Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nisi sed distinctio ea deleniti, sint doloribus sunt provident eligendi delectus fugit excepturi a tenetur atque minus laudantium tempore vitae asperiores cupiditate? Terimakasih'),
-(1, 'Tanggal 19 PAUD mentari akan menyelenggarakan Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam itaque incidunt excepturi possimus culpa id, hic at illum repudiandae pariatur corporis harum delectus temporibus placeat sint accusantium adipisci impedit tempore.'),
-(2, 'Sehubungan dengan pandemi Virus COVID-19, maka Lorem ipsum dolor sit amet consectetur adipisicing elit. Iusto corrupti voluptatum magnam ex, dignissimos ea modi eum labore assumenda. Officiis ad tempore earum quia mollitia perspiciatis reiciendis vel odio architecto?');
+(1, 'Bagi Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nisi sed distinctio ea deleniti, sint doloribus sunt provident eligendi delectus fugit excepturi a tenetur atque minus laudantium tempore vitae asperiores cupiditate? Terimakasih'),
+(2, 'Tanggal 19 PAUD mentari akan menyelenggarakan Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam itaque incidunt excepturi possimus culpa id, hic at illum repudiandae pariatur corporis harum delectus temporibus placeat sint accusantium adipisci impedit tempore.'),
+(3, 'Sehubungan dengan pandemi Virus COVID-19, maka Lorem ipsum dolor sit amet consectetur adipisicing elit. Iusto corrupti voluptatum magnam ex, dignissimos ea modi eum labore assumenda. Officiis ad tempore earum quia mollitia perspiciatis reiciendis vel odio architecto?');
+
+INSERT INTO info_murid values
+(1, 'Andri Maulana', 2020, 2021),
+(2, 'Ardi Suparlan', 2020, 2021),
+(3, 'Aulia Khoerunnisa', 2020, 2021),
+(4, 'Ayu Septiani', 2020, 2021),
+(5, 'Dafasha Purnama', 2020, 2021),
+(6, 'Dea Anggraeni', 2020, 2021),
+(7, 'Delisa Nanda Suhendar', 2020, 2021),
+(8, 'Fazril Maulana', 2020, 2021),
+(9, 'Muhammad Fazri', 2020, 2021),
+(10, 'Muhammad Ramdani Akbar', 2020, 2021);

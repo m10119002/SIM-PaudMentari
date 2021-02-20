@@ -57,3 +57,98 @@ id BIGINT NOT NULL DEFAULT (UUID_SHORT()),
 isi VARCHAR(2400),
 CONSTRAINT pk_prasarana PRIMARY KEY (id)
 );
+
+CREATE TABLE info_murid (
+id BIGINT NOT NULL DEFAULT (UUID_SHORT()),
+nama_lengkap VARCHAR(64) NOT NULL,
+tahun_mulai SMALLINT UNSIGNED NOT NULL,
+tahun_akhir SMALLINT UNSIGNED NOT NULL,
+CONSTRAINT pk_infomurid PRIMARY KEY (id)
+);
+
+CREATE TABLE formulir (
+id_form BIGINT NOT NULL DEFAULT (UUID_SHORT()),
+username VARCHAR(64),
+status VARCHAR(12) NOT NULL DEFAULT ('menunggu'),
+pesan_status VARCHAR(240) NOT NULL DEFAULT ('-'),
+CONSTRAINT pk_form PRIMARY KEY (id_form),
+CONSTRAINT fk_form 
+FOREIGN KEY (username) REFERENCES akun (username)
+ON DELETE CASCADE
+);
+
+CREATE TABLE data_pribadi (
+id_form BIGINT NOT NULL,
+nama_lengkap VARCHAR(64) NOT NULL DEFAULT ('-'),
+jenis_kelamin VARCHAR(12) NOT NULL,
+nisn VARCHAR(18) NOT NULL DEFAULT ('-'),
+nik_nokitas VARCHAR(32) NOT NULL DEFAULT ('-'),
+tempat_lahir VARCHAR(128) NOT NULL DEFAULT ('-'),
+tanggal_lahir VARCHAR(32) NOT NULL,
+reg_akta_lahir  VARCHAR(128) NOT NULL DEFAULT ('-'),
+agama VARCHAR(64) NOT NULL DEFAULT ('-'),
+kewarganegaraan VARCHAR(128) NOT NULL DEFAULT ('-'),
+kebutuhan_khusus VARCHAR(128) NOT NULL DEFAULT ('-'),
+alamat_jalan VARCHAR(240) NOT NULL DEFAULT ('-'),
+rt VARCHAR(8) NOT NULL DEFAULT ('-'),
+rw VARCHAR(8) NOT NULL DEFAULT ('-'),
+nama_dusun VARCHAR(128) NOT NULL DEFAULT ('-'),
+nama_kelurahandesa VARCHAR(128) NOT NULL DEFAULT ('-'),
+kecamatan VARCHAR(128) NOT NULL DEFAULT ('-'),
+kode_pos VARCHAR(12) NOT NULL DEFAULT ('-'),
+lintang VARCHAR(64) NOT NULL DEFAULT ('-'),
+bujur VARCHAR(64) NOT NULL DEFAULT ('-'),
+tempat_tinggal VARCHAR(64) NOT NULL DEFAULT ('-'),
+moda_transportasi VARCHAR(64) NOT NULL DEFAULT ('-'),
+nomor_kks VARCHAR(128) NOT NULL DEFAULT ('-'),
+anak_ke VARCHAR(2) NOT NULL,
+penerima_kpspkh VARCHAR(5) NOT NULL,
+no_kpskph VARCHAR(128) NOT NULL DEFAULT ('-'),
+usulan_sekolah VARCHAR(5) NOT NULL,
+nama_kip VARCHAR(64) NOT NULL DEFAULT ('-'),
+fisik_kartu_kip VARCHAR(5) NOT NULL,
+alasan_layak_pip VARCHAR(64) NOT NULL DEFAULT ('-'),
+bank VARCHAR(64) NOT NULL DEFAULT ('-'),
+no_rek_bank VARCHAR(128) NOT NULL DEFAULT ('-'),
+no_rek_an VARCHAR(128) NOT NULL DEFAULT ('-'),
+CONSTRAINT pk_form_pribadi PRIMARY KEY (id_form),
+CONSTRAINT fk_form_pribadi 
+FOREIGN KEY (id_form) REFERENCES formulir (id_form)
+ON DELETE CASCADE
+);
+
+CREATE TABLE data_ortu (
+id_data_ortu BIGINT NOT NULL DEFAULT (UUID_SHORT()),
+id_form BIGINT NOT NULL,
+tipe VARCHAR(32) NOT NULL,
+nama_lengkap VARCHAR(128) NOT NULL DEFAULT ('-'),
+nik VARCHAR(128) NOT NULL DEFAULT ('-'),
+tahun_lahir VARCHAR(32) NOT NULL DEFAULT ('-'),
+pendidikan VARCHAR(128) NOT NULL DEFAULT ('-'),
+pekerjaan VARCHAR(128) NOT NULL DEFAULT ('-'),
+penghasilan VARCHAR(64) NOT NULL DEFAULT ('-'),
+kebutuhan_khusus VARCHAR(128) NOT NULL DEFAULT ('-'),
+CONSTRAINT pk_form_ortu PRIMARY KEY (id_data_ortu),
+CONSTRAINT fk_form_ortu 
+FOREIGN KEY (id_form) REFERENCES formulir (id_form)
+ON DELETE CASCADE
+);
+
+CREATE TABLE data_kontak (
+id_form BIGINT NOT NULL,
+telepon VARCHAR(20) NOT NULL,
+nohp VARCHAR(20) NOT NULL,
+CONSTRAINT pk_form_kontak PRIMARY KEY (id_form),
+CONSTRAINT fk_form_kontak 
+FOREIGN KEY (id_form) REFERENCES formulir (id_form) 
+ON DELETE CASCADE
+);
+
+CREATE TABLE gambar_home (
+file_id BIGINT NOT NULL DEFAULT (UUID_SHORT()),
+file_name VARCHAR(128),
+file_data MEDIUMBLOB,
+file_ext VARCHAR(32),
+file_mime VARCHAR(32),
+CONSTRAINT pk_gambar PRIMARY KEY (file_id)
+);

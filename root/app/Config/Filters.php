@@ -9,6 +9,7 @@ use CodeIgniter\Filters\Honeypot;
 use App\Filters\NoAdminFilter;
 use App\Filters\VisitorFilter;
 use App\Filters\MemberFilter;
+use App\Filters\MemberFormulirFilter;
 use App\Filters\AdminFilter;
 use App\Filters\VisitorMemberFilter;
 
@@ -32,6 +33,11 @@ class Filters extends BaseConfig
 		'member' => [
 			NoAdminFilter::class,
 			MemberFilter::class
+		],
+		'memberForm' => [
+			NoAdminFilter::class,
+			MemberFilter::class,
+			MemberFormulirFilter::class
 		],
 		'admin' => [
 			NoAdminFilter::class,

@@ -77,7 +77,11 @@ class Visitor extends BaseController
 			if (!$cekManual->run($formData, 'akun')) {
 				$viewData = [
 					'loadForm' => $formData,
-					'validation' => $cekManual->getErrors()
+					'validation' => [
+						'user' => $cekManual->getError('user'),
+						'pass' => $cekManual->getError('pass'),
+						'pass_ulang' => $cekManual->getError('pass_ulang')
+					]
 				];
 				return view('Visitor\register', $viewData);
 			}
@@ -89,9 +93,23 @@ class Visitor extends BaseController
 			];
 			
 			if ($akunTambahModel->insert($data) === false) {
+				$user_err = '';
+				$pass_err = '';
+				foreach ($akunTambahModel->errors() as $key => $val) {
+					if ($key == 'username') {
+						$user_err = $val;
+					}
+					if ($key == 'password') {
+						$pass_err = $val;
+					}
+				}
+				
 				$viewData = [
 					'loadForm' => $formData,
-					'validation' => $cekManual->getErrors()
+					'validation' => [
+						'user' => $user_err,
+						'pass' => $pass_err
+					]
 				];
 				return view('Visitor\register', $viewData);
 			} else {

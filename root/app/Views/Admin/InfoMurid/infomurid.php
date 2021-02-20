@@ -28,29 +28,51 @@
             <br>
         </center>
 
-        <!-- Informasi Sarana dan Prasarana -->
+        <!-- Informasi Murid -->
         <div class="container" style="background-color: white; border: 5px solid #823b08fd;">
             <h3 style="font-family: Brush Script MT, Cambria, Cochin, Georgia; font-size: 40px;">Info Murid</h3><br>
 
             <table class="table" style="font-size: 13px;">
+				<?php $t_mode = isset($mode)? $mode : ''; ?>
+				<?php if ($t_mode == ''): ?>
+				<tr>
+                    <td colspan=6 align=center style="text-align: center; font-size: 17px;">
+                        <b>Daftar Murid Tahun Ajaran ?/?</b>
+				<?php elseif ($t_mode == 'satu'): ?>
                 <tr>
-                    <td colspan="3" style="text-align: center; font-size: 17px;">
-                        <b>Daftar Murid Tahun Ajaran 2020/2021</b>
-                <tr>
-                    <td style=" width: 50%; text-align: center;">Andri Maulana
-                    <td style=" width: 50%; text-align: center;">Dea Anggraeni
-                <tr>
-                    <td style=" width: 50%; text-align: center;">Ardi Suparlan
-                    <td style=" width: 50%; text-align: center;">Delisa Nanda Suhendar
-                <tr>
-                    <td style=" width: 50%; text-align: center;">Aulia Khoerunnisa
-                    <td style=" width: 50%; text-align: center;">Fazril Maulana
-                <tr>
-                    <td style=" width: 50%; text-align: center;">Ayu Septiani
-                    <td style=" width: 50%; text-align: center;">Muhammad Fazri
-                <tr>
-                    <td style=" width: 50%; text-align: center;">Dafasha Purnama
-                    <td style=" width: 50%; text-align: center;">Muhammad Ramdani Akbar
+                    <td colspan=6 align=center style="text-align: center; font-size: 17px;">
+                        <b>Daftar Murid Tahun Ajaran <?php echo $angkatan."/".($angkatan+1); ?></b>
+				<?php elseif ($t_mode == 'awal'): ?>
+				<tr>
+                    <td colspan=4 align=center style="text-align: center; font-size: 17px;">
+                        <b>Daftar Murid Tahun Ajaran <?php echo $angkatan."/".($angkatan+1); ?></b>
+					<td>
+					<td><a href="<?php echo base_url('admin/infomurid/'.$angkatan+1); ?>"><?php echo $angkatan+1; ?></a>
+				<?php elseif ($t_mode == 'tengah'): ?>
+				<tr>
+                    <td colspan=4 align=center style="text-align: center; font-size: 17px;">
+                        <b>Daftar Murid Tahun Ajaran <?php echo $angkatan."/".($angkatan+1); ?></b>
+					<td><a href="<?php echo base_url('admin/infomurid/'.$angkatan-1); ?>"><?php echo $angkatan-1; ?></a>
+					<td><a href="<?php echo base_url('admin/infomurid/'.$angkatan+1); ?>"><?php echo $angkatan+1; ?></a>
+				<?php elseif ($t_mode == 'akhir'): ?>
+				<tr>
+                    <td colspan=4 align=center style="text-align: center; font-size: 17px;">
+                        <b>Daftar Murid Tahun Ajaran <?php echo $angkatan."/".($angkatan+1); ?></b>
+					<td><a href="<?php echo base_url('admin/infomurid/'.$angkatan-1); ?>"><?php echo $angkatan-1; ?></a>
+					<td>
+				<?php endif; ?>
+				<?php if (isset($loadTable)): ?>
+				<?php foreach ($loadTable as $row): ?>
+					<tr>
+						<td colspan=2 style=" width: 50%; text-align: center;"><?php echo $row['nama_lengkap']; ?>
+						<td><?php echo $row['tahun_mulai']; ?>
+						<td><?php echo $row['tahun_akhir']; ?>
+						<td><a href="<?php echo base_url('admin/infomurid/edit?id='.$row['id']); ?>">Ubah</a>
+						<td><a href="<?php echo base_url('admin/infomurid/hapus?id='.$row['id']); ?>">Hapus</a>
+				<?php endforeach; ?>
+				<?php endif; ?>
+				<tr>
+					<td colspan=6 align=center><a href="<?php echo base_url('admin/infomurid/tambah'); ?>">Tambah Murid Baru</a>
             </table>
 
         </div>

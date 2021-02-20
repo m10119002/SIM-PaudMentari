@@ -62,6 +62,22 @@ class Validation
 		]
 	];
 	
+	public $ubahpass    = [
+		'pass' => 'required|max_length[50]',
+		'pass_ulang' => 'required|matches[pass]'
+	];
+	
+    public $ubahpass_errors = [
+		'pass' => [
+			'required' => 'Password tidak boleh kosong!',
+			'max_length' => 'Password tidak boleh melebihi 50 karakter!'
+		],
+		'pass_ulang' => [
+			'required' => 'Password Ulang tidak boleh kosong!',
+			'matches' => 'Password Ulang harus sama dengan Password!'
+		]
+	];
+	
 	public $login    = [
 		'username' => 'required',
 		'password' => 'required'

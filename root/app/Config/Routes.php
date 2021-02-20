@@ -33,11 +33,21 @@ $routes->group('member', function($routes) {
 	$routes->get('/', 'Member\Member::home', ['filter' => 'member']);
 	
 	$routes->get('home', 'Member\Home\MemberHome::index', ['filter' => 'member']);
-	$routes->get('pendaftaran', 'Member\Pendaftaran\MemberPendaftaran::pendaftaran', ['filter' => 'member']);
+	$routes->group('pendaftaran', function($routes) {
+		$routes->get('/', 'Member\Pendaftaran\MemberPendaftaran::index', ['filter' => 'member']);
+		$routes->get('daftar', 'Member\Pendaftaran\MemberPendaftaran::daftar', ['filter' => 'member']);
+		$routes->get('formulir', 'Member\Pendaftaran\MemberPendaftaran::formulir', ['filter' => 'memberForm']);
+		$routes->match(['get', 'post'], 'formulir/ubah', 'Member\Pendaftaran\MemberPendaftaran::ubah', ['filter' => 'memberForm']);
+	});
 	
 	$routes->get('infoptk', 'Member\InfoPTK\MemberInfoPTK::index', ['filter' => 'member']);
 	$routes->get('sarpras', 'Member\Sarpras\MemberSarpras::index', ['filter' => 'member']);
-	$routes->get('infomurid', 'Member\InfoMurid\MemberInfoMurid::index', ['filter' => 'member']);
+	
+	$routes->group('infomurid', function($routes) {
+		$routes->get('', 'Member\InfoMurid\MemberInfoMurid::index', ['filter' => 'member']);
+		$routes->get('(:num)', 'Member\InfoMurid\MemberInfoMurid::index/$1', ['filter' => 'member']);
+	});
+	
 	$routes->get('pengumuman', 'Member\Pengumuman\MemberPengumuman::index', ['filter' => 'member']);
 	
 	$routes->get('logout', 'Member\Member::logout', ['filter' => 'member']);
@@ -72,10 +82,11 @@ $routes->group('admin', function($routes) {
 	});
 	
 	$routes->group('infomurid', function($routes) {
-		$routes->get('/', 'Admin\InfoMurid\AdminInfoMurid::index', ['filter' => 'admin']);
-		$routes->get('/(:num)', 'Admin\InfoMurid\AdminInfoMurid::index', ['filter' => 'admin']);
-		$routes->match(['get', 'post'], '(:num)/tambah', 'Admin\InfoMurid\AdminInfoMurid::tambah', ['filter' => 'admin']);
-		$routes->match(['get', 'post'], '(:num)/edit', 'Admin\InfoMurid\AdminInfoMurid::edit', ['filter' => 'admin']);
+		$routes->get('', 'Admin\InfoMurid\AdminInfoMurid::index', ['filter' => 'admin']);
+		$routes->get('(:num)', 'Admin\InfoMurid\AdminInfoMurid::index/$1', ['filter' => 'admin']);
+		$routes->match(['get', 'post'], 'tambah', 'Admin\InfoMurid\AdminInfoMurid::tambah/$1', ['filter' => 'admin']);
+		$routes->match(['get', 'post'], 'edit', 'Admin\InfoMurid\AdminInfoMurid::edit/$1', ['filter' => 'admin']);
+		$routes->get('hapus', 'Admin\InfoMurid\AdminInfoMurid::hapus', ['filter' => 'admin']);
 	});
 	
 	$routes->group('pengumuman', function($routes) {
@@ -83,6 +94,26 @@ $routes->group('admin', function($routes) {
 		$routes->match(['get', 'post'], 'tambah', 'Admin\Pengumuman\AdminPengumuman::tambah', ['filter' => 'admin']);
 		$routes->match(['get', 'post'], 'edit', 'Admin\Pengumuman\AdminPengumuman::edit', ['filter' => 'admin']);
 		$routes->get('hapus', 'Admin\Pengumuman\AdminPengumuman::hapus', ['filter' => 'admin']);
+	});
+	
+	$routes->group('pendaftaran', function($routes) {
+		$routes->get('/', 'Admin\Pendaftaran\AdminPendaftaran::index', ['filter' => 'admin']);
+		
+		$routes->get('pendaftar', 'Admin\Pendaftaran\AdminPendaftaran::pendaftar', ['filter' => 'admin']);
+		
+		$routes->group('formulir', function($routes) {
+			$routes->get('/', 'Admin\Pendaftaran\Formulir\AdminFormulir::index', ['filter' => 'admin']);
+			$routes->get('lihat', 'Admin\Pendaftaran\Formulir\AdminFormulir::lihat', ['filter' => 'admin']);
+			$routes->get('ganti', 'Admin\Pendaftaran\Formulir\AdminFormulir::ganti', ['filter' => 'admin']);
+			$routes->get('hapus', 'Admin\Pendaftaran\Formulir\AdminFormulir::hapus', ['filter' => 'admin']);
+		});
+		
+		$routes->group('akun', function($routes) {
+			$routes->get('/', 'Admin\Pendaftaran\Akun\AdminAkun::index', ['filter' => 'admin']);
+			$routes->match(['get', 'post'], 'tambah', 'Admin\Pendaftaran\Akun\AdminAkun::tambah', ['filter' => 'admin']);
+			$routes->match(['get', 'post'], 'ubahpass', 'Admin\Pendaftaran\Akun\AdminAkun::ubahpass', ['filter' => 'admin']);
+			$routes->get('hapus', 'Admin\Pendaftaran\Akun\AdminAkun::hapus', ['filter' => 'admin']);
+		});
 	});
 	
 	$routes->get('logout', 'Admin\Admin::logout', ['filter' => 'admin']);
